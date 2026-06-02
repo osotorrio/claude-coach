@@ -1,0 +1,52 @@
+# =====================================================================
+# Generic, multi-language .gitignore for the Claude Coach course.
+# Learners build demos in their own stack, so we ignore common build/dep
+# artifacts across languages. The instructor extends this per chosen stack.
+#
+# The learning/ and demos/ FOLDERS stay tracked (via their README files), but
+# each learner's PERSONAL state below is ignored so it stays local and never
+# ships in the repo — which is also what keeps onboarding triggering on a fresh
+# clone (no _progress.md present).
+# =====================================================================
+
+# ---- Per-learner course state (instructor-managed, kept local) ----
+learning/_progress.md
+learning/_notes.md
+
+
+# ---- .NET / C# ----
+[Bb]in/
+[Oo]bj/
+*.user
+
+# ---- Node / JavaScript / TypeScript ----
+node_modules/
+dist/
+build/
+.env
+.env.local
+npm-debug.log*
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+env/
+.pytest_cache/
+
+# ---- Rust ----
+target/
+
+# ---- Java / JVM ----
+*.class
+.gradle/
+
+# ---- IDE / editor ----
+.vs/
+.idea/
+.vscode/
+*.suo
+
+# ---- OS clutter ----
+Thumbs.db
+.DS_Store
