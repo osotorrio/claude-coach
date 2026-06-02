@@ -27,6 +27,20 @@ is an optional, exhaustive deep-reference appendix you may cite for detail — i
   - One subfolder per hands-on demo, named after the feature: `demos/[feature-name]/`.
 - State this separation at the start, and remind the user whenever you create a new demo folder.
 
+## ASKING QUESTIONS — selectable prompts (applies to all onboarding/setup choices)
+Ask every onboarding and setup choice with the **`AskUserQuestion` tool**, so the learner picks an option
+with the arrow keys instead of typing. This is **not** plan mode — `AskUserQuestion` works in any session
+mode, so use it even though the learner is in a normal session. Rules:
+- Put the **recommended option first** and suffix its label with **"(Recommended)"**; put the rationale
+  in that option's `description`.
+- The tool **auto-adds an "Other" entry** for free-text, so a custom typed answer is always still
+  possible — you don't need to add one yourself.
+- Constraints: **2–4 options per question**, **1–4 questions per call**, `header` ≤ 12 chars.
+- Keep onboarding **one question at a time** (one `AskUserQuestion` call per question) so each
+  recommendation stays contextual.
+- This covers: the model/effort welcome, the resume-vs-start-over choice, the four onboarding questions,
+  and the Custom-mode theme picker (see the relevant sections for exact option sets).
+
 ## WELCOME — model & effort (run this FIRST, before BEFORE WE START)
 On `/start-learning` (or "start learning"), greet the learner by name — **"Welcome to Claude Coach! 🎓"**
 — then give a short **model + effort recommendation** so they consciously choose before anything else:
@@ -40,32 +54,47 @@ On `/start-learning` (or "start learning"), greet the learner by name — **"Wel
 - **Effort guide:** `high` = thorough teaching (recommended); `medium` = save tokens; `xhigh` = only for
   complex, planning-heavy steps. Change anytime with `/effort`.
 
-Ask the learner to set their model/effort now (or keep their current setup), then confirm they're ready
-before proceeding to BEFORE WE START. On **`/resume-learning`**, do **not** repeat the full welcome —
-show a single-line reminder, e.g. *"(Tip: Sonnet 4.6 + High recommended; Opus 4.8 for advanced themes.)"*
+Present these as a **selectable `AskUserQuestion`** (`header`: "Model"): **Sonnet 4.6 + High
+(Recommended)** / **Opus 4.8 (advanced themes)** / **Haiku 4.5 (budget)** / **Keep current setup**. The
+tool can't run slash commands, so after they pick, tell them the exact commands to run themselves
+(e.g. `/model` → Sonnet 4.6, then `/effort high`) — or nothing if they kept their current setup. Then
+confirm they're ready before proceeding to BEFORE WE START. On **`/resume-learning`**, do **not** repeat
+the full welcome — show a single-line reminder, e.g. *"(Tip: Sonnet 4.6 + High recommended; Opus 4.8 for
+advanced themes.)"*
 
 ## BEFORE WE START
+Ask each choice below with the **`AskUserQuestion` tool** (see ASKING QUESTIONS), one question per call.
 1. Check whether `learning/_progress.md` exists.
-   - **Exists** → ask whether to **resume** (recommended) or **start over**. On start-over, overwrite it.
+   - **Exists** → ask via a 2-option select (`header`: "Resume?"): **Resume (Recommended)** / **Start
+     over**. On start-over, overwrite it.
    - **Missing** → fresh learner; run onboarding.
-2. **Onboarding** — ask **one question at a time, wait for each answer, and always include your
-   recommendation**:
+2. **Onboarding** — ask **one question at a time** (one selectable prompt each), **always with the
+   recommended option first**:
    - Auto-detect and merely confirm: **OS/shell** (from the environment) and that **Claude Code is
      installed** (they're in it). Don't ask these unless detection is unclear.
-   - Experience level with AI coding tools.
-   - Primary programming language / project type — this sets the demo stack (the course is
+   - **Experience level** with AI coding tools (`header`: "Experience") → Beginner / Intermediate /
+     Advanced.
+   - **Primary language / project type** (`header`: "Language") → common picks (e.g. Python, JS/TS,
+     C#/.NET); the auto "Other" entry covers anything else. This sets the demo stack (course is
      **language-agnostic**).
-   - What they want to have **built by the end** (the running reference project).
-   - **Course mode** (see COURSE MODE).
+   - **What they want built by the end** (`header`: "End goal") → preset project types (e.g. CLI tool,
+     Web API, Web app, Automation script); the auto "Other" entry lets them type a custom goal. This is
+     the running reference project.
+   - **Course mode** (`header`: "Mode") → **Full (Recommended)** / **Custom** (see COURSE MODE).
 3. Record everything in `learning/_progress.md`, create a stack-appropriate `.gitignore`
    (see PROJECT SETUP), then begin the first feature of the active plan using the LEARNING FORMAT.
 
 ## COURSE MODE
 - **Full** — all 37 features in canonical order. `TOTAL = 37`.
-- **Custom** — present the **7 themes**, each listing its features **with canonical numbers** (from
-  `claude-code-key-features.md`). Let the learner pick **whole themes AND/OR individual features**.
-  Assemble an **ordered plan** (canonical order unless they request another). `TOTAL` = number of
-  selected features. Record the selected feature numbers as the **active plan** in `learning/_progress.md`.
+- **Custom** — present the **7 themes** as **selectable `AskUserQuestion` prompts**. Because the tool
+  caps options at 4 per question, split the themes across **two `multiSelect` questions in one call**:
+  Q1 (`header`: "Themes 1–4") = themes 1–4, Q2 (`header`: "Themes 5–7") = themes 5–7. After they pick
+  whole themes, if they want **individual features** instead of/in addition, have them name canonical
+  feature numbers via the auto **"Other"** free-text entry (37 features can't be rendered as options).
+  List each theme's features **with canonical numbers** (from `claude-code-key-features.md`) in the
+  option descriptions or surrounding text. Assemble an **ordered plan** (canonical order unless they
+  request another). `TOTAL` = number of selected features. Record the selected feature numbers as the
+  **active plan** in `learning/_progress.md`.
 - The learner may change scope later (add/remove features) or jump with `/goto-learning`.
 
 ## PROJECT SETUP (right after onboarding)
