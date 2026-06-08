@@ -22,12 +22,13 @@ Set these **before** you start (the course also recommends them in-session on `/
 | Use case | Model | Effort | How to set |
 |---|---|---|---|
 | **Default — whole course** | **Sonnet 4.6** | **High** | `/model` → Sonnet 4.6, then `/effort high` |
-| **Advanced themes** (MCP, hooks, subagents, agent teams) | **Opus 4.8** | High | `/model` → Opus 4.8 (try `/fast` for snappier output) |
+| **Advanced features** (#24 Hooks, #25–26 MCP, #28–30 Subagents/Explore/Agent teams) | **Opus 4.8** | High | `/model` → Opus 4.8 (try `/fast` for snappier output) |
 | **Quick / low-cost runs** | Haiku 4.5 | medium–high | `/model` → Haiku 4.5 |
 
 Sonnet 4.6 at High effort gives the best balance of teaching quality, speed, and cost across a
-multi-session course; bump up to Opus 4.8 for the trickier themes. For effort, `high` is recommended,
-`medium` saves tokens, and `xhigh` is rarely needed.
+multi-session course. The instructor will **proactively remind you** to switch to Opus 4.8 when you
+reach an advanced feature, and prompt you to switch back to Sonnet afterwards. For effort, `high` is
+recommended, `medium` saves tokens, and `xhigh` is rarely needed.
 
 ## 🚀 Getting started
 ```bash

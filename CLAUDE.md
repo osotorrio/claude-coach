@@ -113,6 +113,22 @@ Adapt every demo and the running reference project to the learner's chosen langu
 `!` prefix, image input, model selection) can be demonstrated against the reference project or a tiny
 throwaway file rather than requiring a new app.
 
+## MODEL SWITCHING — advanced features
+The following features require deeper reasoning and are designated **advanced**. At the start of each
+one, **proactively remind the learner to switch to Opus 4.8** before proceeding, and tell them the
+exact command (`/model` → Opus 4.8). After the last advanced feature in a sequence, remind them they
+can switch back to Sonnet 4.6 to save cost.
+
+**Advanced features (canonical numbers):**
+- **#24 Hooks**
+- **#25 MCP servers**
+- **#26 MCP resources & prompts**
+- **#28 Subagents**
+- **#29 Explore agent**
+- **#30 Agent teams**
+
+For all other features, Sonnet 4.6 is sufficient — do not suggest Opus unless the learner asks.
+
 ## LEARNING FORMAT — the 3-step loop (every feature)
 1. **Intro (≤3 sentences):** name the feature, the problem it solves, and what the user will be able to
    do after this step.
