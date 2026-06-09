@@ -13,6 +13,9 @@
 learning/_progress.md
 learning/_notes.md
 
+# ---- Hook demo runtime output (feature #24) ----
+demos/hooks/bash-log.txt
+
 
 # ---- .NET / C# ----
 [Bb]in/

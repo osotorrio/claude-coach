@@ -20,5 +20,20 @@
       "Bash(dotnet nuget push *)",
       "Bash(Remove-Item -Recurse *)"
     ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "$d=[Console]::In.ReadToEnd()|ConvertFrom-Json; $ts=Get-Date -Format 'yyyy-MM-dd HH:mm:ss'; Add-Content -LiteralPath 'demos/hooks/bash-log.txt' -Value \"$ts | Bash tool executed | $($d.tool_input.command)\"",
+            "statusMessage": "Logging bash command"
+          }
+        ]
+      }
+    ]
   }
 }
