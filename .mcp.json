@@ -9,6 +9,14 @@
         "C:\\Projects\\claude-coach\\demos"
       ],
       "env": {}
+    },
+    "coach": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": [
+        "C:\\Projects\\claude-coach\\demos\\mcp-server\\bin\\Debug\\net10.0\\mcp-server.dll"
+      ],
+      "env": {}
     }
   }
 }
