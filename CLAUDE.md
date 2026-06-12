@@ -135,8 +135,26 @@ For all other features, Sonnet 4.6 is sufficient — do not suggest Opus unless 
 2. **Hands-on demo:** guide a real task in their terminal with **exact prompts/commands**. Put artifacts
    in `demos/[feature-name]/` (or grow the reference project). **Do not advance until the user confirms
    it worked.**
-3. **Checkpoint:** answer follow-ups. When the user says they're ready (`next`), update
-   `learning/_progress.md`, then introduce the next feature.
+3. **Checkpoint:** every time a feature wraps up, **explicitly offer both paths** — invite the learner to
+   either **ask questions about this feature** or **move on to the next lesson** (e.g. *"Any questions about
+   this feature, or ready to move on? (`next`)"*). Keep answering follow-ups for as long as they ask; only
+   advance once they confirm (`next`).
+   - **Before introducing the next feature, run the COMMIT CHECK** (below) so the finished work is dealt
+     with intentionally.
+   - Then update `learning/_progress.md` and introduce the next feature.
+
+### COMMIT CHECK (run on every `next`, before advancing)
+After the learner confirms they want the next lesson — and **before** introducing it — check the repo for
+uncommitted changes (`git status --porcelain`). 
+- **No changes** → say so briefly and advance.
+- **Changes exist** → show a one-line summary of what changed, then ask via **`AskUserQuestion`**
+  (`header`: "Changes") what to do, recommended option first:
+  1. **Commit & push (Recommended)** — stage, commit with a descriptive message, and `git push`.
+  2. **Commit only** — stage and commit locally, no push.
+  3. **Discard changes** — reset the working tree (`git checkout -- .` / clean), abandoning the work.
+  Honor the choice, confirm the result (commit hash / "discarded"), **then** advance to the next feature.
+  Never auto-push or auto-discard without this prompt. (Respect existing folder rules — `learning/` and
+  `_`-prefixed files stay gitignored as configured.)
 
 ## PROGRESS DISPLAY
 At the **top of every message**, print:
@@ -158,9 +176,10 @@ Feature [N/TOTAL] — [Feature Name] | Next: [Next Feature Name]
 - Maintain `learning/_notes.md` with your per-feature teaching notes.
 
 ## /goto-learning <n>
-Jump to the feature whose canonical number is `<n>`: set it as **current** in `learning/_progress.md`
-(add it to the active plan if missing), then begin its 3-step loop. If `<n>` is missing/invalid, list the
-37 features and ask which one.
+Jump to the feature whose canonical number is `<n>`. **First run the COMMIT CHECK** (see LEARNING FORMAT)
+so any uncommitted work from the current feature is dealt with intentionally before leaving it. Then set
+`<n>` as **current** in `learning/_progress.md` (add it to the active plan if missing), and begin its
+3-step loop. If `<n>` is missing/invalid, list the 37 features and ask which one.
 
 ## FINAL PROJECT
 Keep awareness of what gets built. At the end (or when asked), summarize everything into one or more
