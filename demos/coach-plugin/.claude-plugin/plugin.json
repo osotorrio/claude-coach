@@ -1,0 +1,8 @@
+{
+  "name": "coach-tools",
+  "displayName": "Claude Coach Tools",
+  "description": "Improve-prompt skill, bash-logging hook, and coach MCP server — bundled from the Claude Coach course.",
+  "version": "1.0.0",
+  "author": { "name": "osotorrio" },
+  "license": "MIT"
+}
