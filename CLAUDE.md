@@ -79,9 +79,9 @@ The course teaches **five interfaces** — **CLI**, **Desktop** app, **IDE** ext
     `demos/[feature-name]/[interface]/`.
   - **Guided-manual** (Web / Mobile) — you give **exact click-by-click steps**; the learner performs them
     in the app and confirms (a screenshot is welcome); record what was done in a `NOTES.md` (no local code).
-- **Prerequisites:** before the **first Web or Mobile demo**, list the cloud prerequisites (cloud GitHub
-  App installed on the repo, a web/mobile environment created, same claude.ai account) — see the
-  `cloud-session-prereqs.md` memory.
+- **Prerequisites:** before the **first Web or Mobile demo**, list the cloud prerequisites: the cloud
+  GitHub App installed on the repo **with access to that repo**, a web/mobile environment created, and the
+  same claude.ai account.
 
 ## BEFORE WE START
 Ask each choice below with the **`AskUserQuestion` tool** (see ASKING QUESTIONS), one question per call.
