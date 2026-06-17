@@ -11,7 +11,7 @@
   per-interface differences.
 - A feature with **✓ in exactly one** column is **interface-specific**.
 
-**Interface key:** **CLI** · **Desk** = Desktop app · **IDE** = VS Code / JetBrains · **Web** = claude.ai · **Mob** = Mobile apps
+**Interface key:** **CLI** · **Desk** = Desktop app · **IDE** = VS Code / JetBrains / Cursor · **Web** = claude.ai · **Mob** = Mobile apps
 
 > This is the **curriculum**. `claude-code-features.md` is an optional, exhaustive deep-reference
 > appendix (all interfaces) you may cite for detail — it is **not** the lesson order.

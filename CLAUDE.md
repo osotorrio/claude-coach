@@ -66,7 +66,7 @@ the full welcome — show a single-line reminder, e.g. *"(Tip: Sonnet 4.6 + High
 advanced themes.)"*
 
 ## INTERFACES (which surfaces the course teaches)
-The course teaches **five interfaces** — **CLI**, **Desktop** app, **IDE** extension (VS Code/JetBrains),
+The course teaches **five interfaces** — **CLI**, **Desktop** app, **IDE** extension (VS Code/JetBrains/Cursor),
 **Web** (claude.ai), and **Mobile** apps (iOS/Android). The capability matrix in
 `claude-code-key-features.md` is **authoritative** for which interfaces each feature applies to
 (✓ = applies · — = n/a); its **Notes** column captures per-interface differences.
