@@ -1,6 +1,6 @@
-# Claude Coach — Learn Claude Code, Hands-On
+# Claude Coach — Learn Claude, Hands-On
 
-**Claude Coach** is a hands-on, self-guided course that teaches you Claude Code's features one at a time.
+**Claude Coach** is a hands-on, self-guided course that teaches you Claude's features — across the **CLI, Desktop app, IDE extension, Web (claude.ai), and Mobile apps** — one at a time.
 Clone this repo, open it in **Claude Code**, type **`/start-learning`**, and a built-in instructor walks
 you through each feature — until you've built a real reference project in **your** language that shows
 them off.
@@ -40,7 +40,7 @@ Then, in the session, type:
 /start-learning
 ```
 (or just say **“start learning”**). The instructor will onboard you with a few quick questions, let you
-choose **Full** or **Custom** mode, and begin.
+pick which **interfaces** to learn (CLI, Desktop, IDE, Web, Mobile), choose **Full** or **Custom** mode, and begin.
 
 ---
 
@@ -53,6 +53,7 @@ choose **Full** or **Custom** mode, and begin.
 | `/pause-learning` | Save your progress and stop. |
 | `/status-learning` | Show progress: completed / current / remaining + demo folders. |
 | `/goto-learning <n>` | Jump straight to a feature by number, e.g. `/goto-learning 15`. |
+| `/interfaces-learning` | Add or remove which interfaces you're learning (CLI, Desktop, IDE, Web, Mobile). |
 
 > All course commands are suffixed **`-learning`** on purpose, so they never collide with Claude Code's
 > built-in commands (`/resume`, `/status`, `/compact`, …).
@@ -64,7 +65,7 @@ choose **Full** or **Custom** mode, and begin.
 
 ## 🧭 Full vs Custom mode
 During onboarding you choose:
-- **Full** — all **37 features** in order, beginning → end.
+- **Full** — all **48 features** in order, beginning → end (filtered to the interfaces you picked).
 - **Custom** — pick **whole themes and/or individual features**; the instructor builds a custom ordered
   plan just for you and tracks progress against it.
 
@@ -77,7 +78,7 @@ You can change scope or jump around at any time with `/goto-learning`.
 learning/   ← the instructor's files (auto-managed). You never edit these.
               _progress.md = your saved state · _notes.md = teaching notes
 demos/      ← YOURS. Every hands-on demo + your reference project live here.
-              one subfolder per feature: demos/[feature-name]/
+              one subfolder per feature, then per interface: demos/[feature-name]/[interface]/
 ```
 Anything starting with `_` or inside `learning/` is the instructor's; everything in `demos/` is yours.
 
@@ -87,16 +88,16 @@ Resuming reads that file and continues from the exact next step — it never res
 
 ---
 
-## 📚 Curriculum — 37 features across 7 themes
+## 📚 Curriculum — 48 features across 7 themes & five interfaces
 Driven by [`claude-code-key-features.md`](./claude-code-key-features.md):
 
-1. **Daily Driver** — interactive session, `@` mentions, `!` shell prefix, image input, slash commands, plan mode, extended thinking, model selection, headless mode.
-2. **Context & Memory** — CLAUDE.md, `/init`, `.claude/rules/`, auto memory, context management, sessions, checkpointing/rewind.
+1. **Daily Driver** — interactive session, `@` mentions, `!` shell prefix, image input, voice dictation, slash commands, plan mode, extended thinking, model selection, headless mode.
+2. **Context & Memory** — CLAUDE.md, `/init`, `.claude/rules/`, auto memory, Projects, context management, sessions, checkpointing/rewind.
 3. **Configuration & Control** — settings.json, permission modes, permission rules, env vars, sandboxing, display & UX.
-4. **Automation & Extensibility** — skills, hooks, MCP servers, MCP resources & prompts, plugins.
+4. **Automation & Extensibility** — skills, hooks, MCP servers, connectors, MCP resources & prompts, plugins.
 5. **Parallelism & Orchestration** — subagents, explore agent, agent teams, worktrees.
-6. **Team Collaboration** — git integration, IDE integrations, code review, GitHub Actions.
-7. **Remote Access** — remote control, teleport.
+6. **Team Collaboration** — git integration, inline diffs & selection-context (IDE), code review, GitHub/GitLab automation, visual multi-session view.
+7. **Remote Access & Cross-Device** — Desktop / Web / Mobile apps, scheduled tasks & routines, dispatch, remote control, teleport.
 
 Want every last detail? [`claude-code-features.md`](./claude-code-features.md) is a 400+ feature
 deep-reference appendix.
