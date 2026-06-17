@@ -1,7 +1,7 @@
 ---
-description: Start the hands-on Claude Code course (onboarding, then the first feature)
+description: Start the hands-on Claude course (onboarding, then the first feature)
 ---
-Begin the Claude Code course defined in `CLAUDE.md`.
+Begin the Claude course defined in `CLAUDE.md`.
 
 Ask every choice below with the **`AskUserQuestion` tool** so I pick options with the arrow keys
 (recommended option first, suffixed "(Recommended)"; the tool auto-adds an "Other" entry for free text).
@@ -16,7 +16,7 @@ for me) and confirm before continuing.
 Then run the **BEFORE WE START** procedure: check whether `learning/_progress.md` exists. If it does, ask
 **Resume (Recommended) / Start over** as a selectable prompt. If it does not, run onboarding — **one
 selectable question at a time**: experience level, primary language/project type, end goal (preset
-project types + "Other"), and **course mode** (Full vs Custom). For **Custom**, present the 7 themes as
+project types + "Other"), **which interface(s) to learn** (per the INTERFACE SELECTION section — two `multiSelect` questions, default CLI), and **course mode** (Full vs Custom). For **Custom**, present the 7 themes as
 two `multiSelect` questions (themes 1–4 and 5–7). Then create a stack-appropriate `.gitignore`, record
 everything in `learning/_progress.md`, and begin the first feature of the active plan using the 3-step
 teaching loop. Show the progress line at the top of every message.

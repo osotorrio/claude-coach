@@ -1,6 +1,7 @@
 # Claude Code — Comprehensive Feature Reference for Software Engineers
 
 *Ordered from beginner → advanced within each category.*
+*Covers all Claude interfaces — CLI, Desktop, IDE, Web (claude.ai), and Mobile.*
 
 ---
 
