@@ -65,7 +65,7 @@ pick which **interfaces** to learn (CLI, Desktop, IDE, Web, Mobile), choose **Fu
 
 ## 🧭 Full vs Custom mode
 During onboarding you choose:
-- **Full** — all **48 features** in order, beginning → end (filtered to the interfaces you picked).
+- **Full** — all **54 features** in order, beginning → end (filtered to the interfaces you picked).
 - **Custom** — pick **whole themes and/or individual features**; the instructor builds a custom ordered
   plan just for you and tracks progress against it.
 
@@ -88,15 +88,15 @@ Resuming reads that file and continues from the exact next step — it never res
 
 ---
 
-## 📚 Curriculum — 48 features across 7 themes & five interfaces
+## 📚 Curriculum — 54 features across 7 themes & five interfaces
 Driven by [`claude-code-key-features.md`](./claude-code-key-features.md):
 
-1. **Daily Driver** — interactive session, `@` mentions, `!` shell prefix, image input, voice dictation, slash commands, plan mode, extended thinking, model selection, headless mode.
-2. **Context & Memory** — CLAUDE.md, `/init`, `.claude/rules/`, auto memory, Projects, context management, sessions, checkpointing/rewind.
-3. **Configuration & Control** — settings.json, permission modes, permission rules, env vars, sandboxing, display & UX.
+1. **Daily Driver** — interactive session, `@` mentions, `!` shell prefix, image input, voice dictation, slash commands, plan mode, extended thinking, model selection, headless mode, run & verify your app.
+2. **Context & Memory** — CLAUDE.md, `/init`, `.claude/rules/`, auto memory, Projects, context management, sessions, conversation branching, checkpointing/rewind.
+3. **Configuration & Control** — settings.json, permission modes, permission rules, env vars, sandboxing, display & UX, usage & cost tracking.
 4. **Automation & Extensibility** — skills, hooks, MCP servers, connectors, MCP resources & prompts, plugins.
-5. **Parallelism & Orchestration** — subagents, explore agent, agent teams, worktrees.
-6. **Team Collaboration** — git integration, inline diffs & selection-context (IDE), code review, GitHub/GitLab automation, visual multi-session view.
+5. **Parallelism & Orchestration** — subagents, explore agent, agent teams, worktrees, goal-driven autonomy, background & forked agents.
+6. **Team Collaboration** — git integration, inline diffs & selection-context (IDE), code review, GitHub/GitLab automation, cloud PR autofix, visual multi-session view.
 7. **Remote Access & Cross-Device** — Desktop / Web / Mobile apps, scheduled tasks & routines, dispatch, remote control, teleport.
 
 Want every last detail? [`claude-code-features.md`](./claude-code-features.md) is a 400+ feature

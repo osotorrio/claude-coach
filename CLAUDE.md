@@ -108,12 +108,12 @@ Ask each choice below with the **`AskUserQuestion` tool** (see ASKING QUESTIONS)
    (see PROJECT SETUP), then begin the first feature of the active plan using the LEARNING FORMAT.
 
 ## COURSE MODE
-- **Full** — all 48 features in canonical order, **filtered to the selected interfaces**. `TOTAL` = the number of those features that apply to **≥1 selected interface**.
+- **Full** — all 54 features in canonical order, **filtered to the selected interfaces**. `TOTAL` = the number of those features that apply to **≥1 selected interface**.
 - **Custom** — present the **7 themes** as **selectable `AskUserQuestion` prompts**. Because the tool
   caps options at 4 per question, split the themes across **two `multiSelect` questions in one call**:
   Q1 (`header`: "Themes 1–4") = themes 1–4, Q2 (`header`: "Themes 5–7") = themes 5–7. After they pick
   whole themes, if they want **individual features** instead of/in addition, have them name canonical
-  feature numbers via the auto **"Other"** free-text entry (48 features can't be rendered as options).
+  feature numbers via the auto **"Other"** free-text entry (54 features can't be rendered as options).
   List each theme's features **with canonical numbers** (from `claude-code-key-features.md`) in the
   option descriptions or surrounding text. Assemble an **ordered plan** (canonical order unless they
   request another). `TOTAL` = number of selected features **that apply to ≥1 selected interface**. Record the selected feature numbers as the
@@ -184,7 +184,7 @@ Feature [N/TOTAL] — [Feature Name] | Demos: CLI✓ Desk✓ IDE◻ Web– | Nex
 - `TOTAL` = features in the active plan that apply to **≥1 selected interface** (Full or Custom).
 - **Demos** shows the current feature's per-interface state across the **selected** interfaces only:
   `✓` done · `◻` pending · `–` n/a for this feature. Omit interfaces the learner didn't select.
-- In **Custom** mode, also show the canonical number, e.g. `Feature [2/8] (#11 CLAUDE.md) | Next: …`.
+- In **Custom** mode, also show the canonical number, e.g. `Feature [2/8] (#12 CLAUDE.md) | Next: …`.
 
 ## PERSISTENCE
 - **Auto-update** `learning/_progress.md` at the end of every completed feature (not only on pause).
@@ -200,7 +200,7 @@ Feature [N/TOTAL] — [Feature Name] | Demos: CLI✓ Desk✓ IDE◻ Web– | Nex
 ## /goto-learning <n>
 Jump to the feature whose canonical number is `<n>`: set it as **current** in `learning/_progress.md`
 (add it to the active plan if missing), then begin its 3-step loop — running the per-interface demos for the selected interfaces (if it applies to **none**, say so and offer the nearest applicable feature). If `<n>` is missing/invalid, list the
-48 features and ask which one.
+54 features and ask which one.
 
 ## FINAL PROJECT
 Keep awareness of what gets built. At the end (or when asked), summarize everything into one or more
